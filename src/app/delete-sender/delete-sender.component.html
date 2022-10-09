@@ -1,22 +1,7 @@
 <div class="section container">
-    <table class="table table-striped table-condensed">
-        <thead>
-        <tr>
-            <th>#</th>
-            <th>Sender ID</th>
-            <th>Name</th>
-            <th>Parcels</th>
-            <th>Delete?</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr *ngFor="let sender of sendersDB; let i = index">
-            <td>{{i+1}}</td>
-            <td>{{sender._id}}</td>
-            <td>{{sender.name}}</td>
-            <td>{{sender.parcels}}</td>
-            <td><button type="submit" class="btn btn-primary" (click)="onDeleteSender(sender)">Delete</button></td>
-        </tr>
-        </tbody>
-    </table>
+    <div class="form-group">
+      <label for="name">Sender ID</label>
+      <input type="text" class="form-control" id="name" [(ngModel)]="senderId">
+    </div>
+    <button type="submit" class="btn btn-primary" (click)="onDeleteSender(senderId)">Delete Sender</button>
 </div>

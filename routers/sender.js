@@ -36,7 +36,6 @@ module.exports = {
 
     deleteSender: function (req, res) {
         Sender.findOneAndRemove({ _id: req.params.id }, function (err) {
-            parcels.remove();
             if (err) return res.status(400).json(err);
             res.json();
         });

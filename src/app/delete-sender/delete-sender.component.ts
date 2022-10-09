@@ -9,6 +9,7 @@ import { Router } from "@angular/router";
 })
 export class DeleteSenderComponent implements OnInit {
   sendersDB: any[] = [];
+  senderId:any = "";
 
   constructor(private dbService: DatabaseService, private router: Router) { }
   
@@ -18,8 +19,8 @@ export class DeleteSenderComponent implements OnInit {
     });
   }
 
-  onDeleteSender(sender:any) {
-    this.dbService.deleteSender(sender._id).subscribe(result => {
+  onDeleteSender(senderId:any) {
+    this.dbService.deleteSender(senderId).subscribe(result => {
       this.onGetSenders();
       this.router.navigate(["/listsenders"]);
     });
