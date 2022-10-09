@@ -1,15 +1,25 @@
 import { Component, OnInit } from '@angular/core';
+import { DatabaseService } from "../database.service";
+import { Router } from "@angular/router";
 
 @Component({
   selector: 'app-add-sender',
   templateUrl: './add-sender.component.html',
   styleUrls: ['./add-sender.component.css']
 })
-export class AddSenderComponent implements OnInit {
+export class AddSenderComponent {
+  senderName: string = "";
 
-  constructor() { }
+  constructor(private dbService: DatabaseService, private router: Router) { }
 
-  ngOnInit(): void {
+  onAddSender() {
+    let newSender = {
+      name: this.senderName
+    }
+
+    this.dbService.addSender(newSender).subscribe(result => {
+      this.router.navigate(["/listsenders"]);
+    })
   }
 
 }

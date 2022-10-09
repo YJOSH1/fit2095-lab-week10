@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { AnyArray } from 'mongoose';
+import { DatabaseService } from "../database.service";
 
 @Component({
   selector: 'app-list-parcels',
@@ -6,10 +8,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./list-parcels.component.css']
 })
 export class ListParcelsComponent implements OnInit {
+  parcelsDB: any[] = [];
 
-  constructor() { }
+  constructor(private dbService: DatabaseService) { }
 
   ngOnInit(): void {
+    this.dbService.getParcels().subscribe((data: any) => {
+      this.parcelsDB = data;
+    });
   }
 
 }

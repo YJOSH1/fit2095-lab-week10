@@ -1,1 +1,22 @@
-<p>add-parcel works!</p>
+<div class="section container">
+    <div class="form-group">
+      <label for="senderId">Sender ID</label>
+      <input type="text" class="form-control" id="senderId" [(ngModel)]="senderId">
+    </div>
+    <div class="form-group">
+      <label for="address">Address</label>
+      <input type="text" class="form-control" id="address" [(ngModel)]="address">
+    </div>
+    <div class="form-group">
+      <label for="weight">Weight</label>
+      <input type="number" class="form-control" id="weight" [(ngModel)]="weight">
+    </div>
+    <div class="form-group">
+      <label for="fragile">Fragile?</label><br>
+      <select name="fragile" id="fragile" [(ngModel)]="fragile">
+        <option value="true">True</option>
+        <option value="false">False</option>
+      </select>
+    </div>
+    <button type="submit" class="btn btn-primary" (click)="onAddParcel()">Add Parcel</button>
+  </div>

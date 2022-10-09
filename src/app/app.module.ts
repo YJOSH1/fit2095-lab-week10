@@ -13,6 +13,18 @@ import { AddParcelComponent } from './add-parcel/add-parcel.component';
 import { ListParcelsComponent } from './list-parcels/list-parcels.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { RouterModule, Routes } from "@angular/router";
+
+const appRoutes: Routes = [
+  { path: "dashboard", component: DashboardComponent },
+  { path: "addsender", component: AddSenderComponent },
+  { path: "listsenders", component: ListSendersComponent },
+  { path: "deletesender", component: DeleteSenderComponent },
+  { path: "addparcels", component: AddParcelComponent },
+  { path: "listparcels", component: ListParcelsComponent },
+  { path: "", redirectTo: "/dashboard", pathMatch: "full" },
+  { path: "**", component: PageNotFoundComponent },
+];
 
 @NgModule({
   declarations: [
@@ -26,6 +38,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     PageNotFoundComponent
   ],
   imports: [
+    RouterModule.forRoot(appRoutes),
     BrowserModule,
     FormsModule,
     HttpClientModule

@@ -1,1 +1,7 @@
-<p>add-sender works!</p>
+<div class="section container">
+    <div class="form-group">
+      <label for="name">Name</label>
+      <input type="text" class="form-control" id="name" [(ngModel)]="senderName">
+    </div>
+    <button type="submit" class="btn btn-primary" (click)="onAddSender()">Add Sender</button>
+  </div>

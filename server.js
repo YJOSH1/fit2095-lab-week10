@@ -13,7 +13,7 @@ app.listen(8080);
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
-app.use("/", express.static(path.join(__dirname, "dist/fit2095-lab-week9")));
+app.use("/", express.static(path.join(__dirname, "dist/fit2095-lab-week10")));
 
 mongoose.connect('mongodb://localhost:27017/poms', function (err) {
     if (err) {
