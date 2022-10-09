@@ -21,7 +21,8 @@ const appRoutes: Routes = [
   { path: "listsenders", component: ListSendersComponent },
   { path: "deletesender", component: DeleteSenderComponent },
   { path: "addparcel", component: AddParcelComponent },
-  { path: "listparcels", component: ListParcelsComponent }
+  { path: "listparcels", component: ListParcelsComponent },
+  { path: '**', component: PageNotFoundComponent }
 ];
 
 @NgModule({
@@ -36,7 +37,7 @@ const appRoutes: Routes = [
     PageNotFoundComponent
   ],
   imports: [
-    RouterModule.forRoot(appRoutes),
+    RouterModule.forRoot(appRoutes, {useHash: true}),
     BrowserModule,
     FormsModule,
     HttpClientModule

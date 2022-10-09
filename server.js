@@ -13,7 +13,7 @@ app.listen(8080);
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
-app.use("/", express.static(path.join(__dirname, "dist/fit2095-lab-week10")));
+app.use(express.static(path.join(__dirname, "dist", "fit2095-lab-week10")));
 
 mongoose.connect('mongodb://localhost:27017/poms', function (err) {
     if (err) {
@@ -36,6 +36,6 @@ app.get('/parcels', parcel.getAllParcels);
 //Sender
 app.post('/sender', sender.newSender);
 app.get('/sender/:name', sender.getSenderName);
-app.delete('/sender', sender.deleteSender)
+app.delete('/sender/:id', sender.deleteSender)
 app.put('/sender', sender.updateSenderName);
 app.get('/senders', sender.getAllSenders);

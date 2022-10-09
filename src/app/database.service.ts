@@ -1,5 +1,6 @@
 import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Injectable } from '@angular/core';
+import { DeleteSenderComponent } from "./delete-sender/delete-sender.component";
 
 const httpOptions = {
   headers: new HttpHeaders({ "Content-Type": "application/json" }),
@@ -25,5 +26,10 @@ export class DatabaseService {
 
   addSender(data: any) {
     return this.http.post('/sender', data, httpOptions);
+  }
+
+  deleteSender(data: any) {
+    let url = "/sender/" + data
+    return this.http.delete(url, httpOptions);
   }
 }

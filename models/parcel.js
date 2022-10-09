@@ -4,7 +4,7 @@ const sender = require('./sender');
 const parcelSchema = new mongoose.Schema({
     _id: {
         type: mongoose.Schema.Types.ObjectId,
-        auto: true
+        auto: true  
     },
     sender: {
         type: mongoose.Schema.ObjectId,

@@ -2,6 +2,7 @@ const mongoose = require('mongoose');
 
 const Sender = require('../models/sender');
 const Parcel = require('../models/parcel');
+const { getParcelsByAddress } = require('./parcel');
 
 module.exports = {
     getAllSenders: function (req, res) {
@@ -34,7 +35,8 @@ module.exports = {
     },
 
     deleteSender: function (req, res) {
-        Sender.findOneAndRemove({ _id: req.body.id }, function (err) {
+        Sender.findOneAndRemove({ _id: req.params.id }, function (err) {
+            parcels.remove();
             if (err) return res.status(400).json(err);
             res.json();
         });
