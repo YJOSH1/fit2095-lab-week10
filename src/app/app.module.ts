@@ -16,14 +16,12 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { RouterModule, Routes } from "@angular/router";
 
 const appRoutes: Routes = [
-  { path: "dashboard", component: DashboardComponent },
+  { path: "", component: DashboardComponent },
   { path: "addsender", component: AddSenderComponent },
   { path: "listsenders", component: ListSendersComponent },
   { path: "deletesender", component: DeleteSenderComponent },
-  { path: "addparcels", component: AddParcelComponent },
-  { path: "listparcels", component: ListParcelsComponent },
-  { path: "", redirectTo: "/dashboard", pathMatch: "full" },
-  { path: "**", component: PageNotFoundComponent },
+  { path: "addparcel", component: AddParcelComponent },
+  { path: "listparcels", component: ListParcelsComponent }
 ];
 
 @NgModule({

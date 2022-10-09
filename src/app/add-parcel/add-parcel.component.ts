@@ -7,7 +7,7 @@ import { Router } from "@angular/router";
 @Component({
   selector: 'app-add-parcel',
   templateUrl: './add-parcel.component.html',
-  styleUrls: ['./add-parcel.component.css']
+  styleUrls: ['../app.component.css']
 })
 export class AddParcelComponent {
   senderId: string = "";

@@ -19,9 +19,9 @@
 }
 
 .section {
-    margin-top: 50px;
+    margin-top: 50px !important;
 }
 
 .form-group {
-    padding-bottom: 20px;
+    padding-bottom: 20px !important;
 }

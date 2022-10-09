@@ -5,7 +5,7 @@ import { Router } from "@angular/router";
 @Component({
   selector: 'app-add-sender',
   templateUrl: './add-sender.component.html',
-  styleUrls: ['./add-sender.component.css']
+  styleUrls: ['../app.component.css']
 })
 export class AddSenderComponent {
   senderName: string = "";
